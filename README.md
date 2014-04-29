@@ -12,7 +12,15 @@ strings of length 16.
 When deploying this, it's important to never use the same code twice. It's 
 probably best to pick randomly from the set of codes you've never asked for.
 
-See the example files:
+See the example files, both generated with 'aaaaaaaaaaaaaaaa' as the secret.
 
 - [Example PDF file](example.pdf)
 - [Example text file](example.txt)
+
+Enjoy!
+
+
+Licence
+-------
+
+Code is licenced under the [2-clause BSD licence](licence.md)

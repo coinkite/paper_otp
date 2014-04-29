@@ -27,8 +27,6 @@
 # ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 # POSSIBILITY OF SUCH DAMAGE.
 # 
-# 
-# Original Author: Peter D. Gray (@dochex)
 #
 # Manage a single-page PDF containing single-use numeric tokens. The tokens
 # are generated using the RFC6238 algorithm with the X/Y coordinate as
@@ -38,15 +36,14 @@
 # When deploying this, it's important to never use the same code twice. It's 
 # probably best to pick randomly from the set of codes you've never asked for.
 # 
-
-import os, random
+# Original Author: Peter D. Gray (@dochex)
+# 
+import os, sys, random
 from onetimepass import get_hotp
-import pdb
 
 # Card is a 10x10 grid, A1 is top left corner, B1 is next etc to K0 at bottom right
 X_COORDS = 'ABCDEFGHJK'
 NUM_CODES = 100
-
 
 def xy_to_num(xy):
     "convert A5 into number from zero to NUM_CODES"
@@ -62,19 +59,22 @@ def xy_to_num(xy):
     return X_COORDS.find(x) + (((10 + y - 1) % 10)*10)
 
 def num_to_xy(num):
+    "Map 0..100 into A1 and so on"
     assert 0 <= num < NUM_CODES, num
     x = X_COORDS[num % 10]
     return '%s%d' % (x, ((num/10)+1) % 10)
 
 def calc_values(secret):
+    "Calculate all the tokens for a single page"
     return [get_hotp(secret, i, as_string=True) for i in range(NUM_CODES)]
 
 def valid_guess_xy(secret, coord, guess):
-    # test if correct answer given
+    "test if correct answer given"
     num = xy_to_num(coord)
     return get_hotp(secret, num) == int(guess)
 
 def text_version(secret):
+    "Make a text-only version of the card -- suggested for debug only"
     values = calc_values(secret)
     
     rv = []
@@ -89,7 +89,7 @@ def text_version(secret):
     return rv
 
 def modulate(values):
-    # for each string of values (a list), split into two areas; always 3 + 3 digits
+    "for each string of values (a list), split into two areas; always 3 + 3 digits"
     a,b = [], []
     for v in values:
         here = random.sample(range(6), 3)
@@ -99,7 +99,7 @@ def modulate(values):
     return a, b
     
 def genpdf(pdf_file, secret, example=False):
-    # Make a PDF file containing the key
+    "Make a PDF file containing 100 single-use codes, in decoder-ring style"
     from reportlab.platypus import SimpleDocTemplate, Table, TableStyle, Paragraph
     from reportlab.lib.styles import ParagraphStyle
     from reportlab.lib.pagesizes import letter
@@ -108,7 +108,7 @@ def genpdf(pdf_file, secret, example=False):
 
     if 0:
         # This works fine, but could not find a BOLD, fixed-width, 7-segment display font that 
-        # was free for commerical.
+        # was free for commerical. Change also one line before to use "Numbers" as font.
         from reportlab.pdfbase import pdfmetrics
         from reportlab.pdfbase.ttfonts import TTFont
         font_file = os.path.realpath(__file__+'/../numbers-font.ttf')
@@ -142,7 +142,7 @@ def genpdf(pdf_file, secret, example=False):
                 #('FONTNAME', (1,1), (10,10), 'Numbers'),
             ])
 
-    # This table will draw upside down and mirrow imaged
+    # This table will draw upside down and mirror-imaged
     class MirrorTable(Table):
         def draw(self):
             c = self.canv
@@ -178,6 +178,7 @@ def genpdf(pdf_file, secret, example=False):
     doc.build(elements) 
 
 def selftest():
+    "some quick, basic testing code"
     for i in range(NUM_CODES):
         xy = num_to_xy(i)
         assert xy_to_num(xy) == i, (xy, i, xy_to_num(xy))
@@ -186,7 +187,13 @@ def selftest():
     print '\n'.join(text_version('a'*16))
 
 if __name__ == "__main__":
+    random.seed()
     selftest()
-    genpdf(file('test.pdf', 'w'), 'a'*16, example=False)
+
+    with file('test.pdf', 'w') as f:
+        genpdf(f, 'a'*16, example=False)
+
+    if 'Apple' in sys.version:
+        os.system('open test.pdf')
 
 # EOF 
