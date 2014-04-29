@@ -17,9 +17,7 @@ See the example files, both generated with 'aaaaaaaaaaaaaaaa' as the secret.
 - [Example PDF file](example.pdf)
 - [Example text file](example.txt)
 
-![Example Screenshot](screenshot.png "Example Screenshot")
-
-Enjoy!
+![Example as PNG](example.png "Example OTP Sheet")
 
 
 More about Coinkite
