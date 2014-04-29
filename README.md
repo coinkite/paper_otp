@@ -12,3 +12,7 @@ strings of length 16.
 When deploying this, it's important to never use the same code twice. It's 
 probably best to pick randomly from the set of codes you've never asked for.
 
+See the example files:
+
+- [Example PDF file](example.pdf)
+- [Example text file](example.txt)
