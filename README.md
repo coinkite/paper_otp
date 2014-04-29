@@ -16,7 +16,8 @@ See the example files, both generated with 'aaaaaaaaaaaaaaaa' as the secret.
 
 - [Example PDF file](example.pdf)
 - [Example text file](example.txt)
-- ![Example Screenshot](screenshot.png "Example Screenshot")
+
+![Example Screenshot](screenshot.png "Example Screenshot")
 
 Enjoy!
 
