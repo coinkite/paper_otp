@@ -1,0 +1,2 @@
+reportlab>=2.7
+onetimepass>=0.2.2
