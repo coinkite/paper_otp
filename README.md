@@ -1,7 +1,7 @@
 Paper OTP
 =========
 
-Paper OTP Code generator
+Paper OTP Code Generator
 ------------------------
 
 Manage a single-page PDF containing single-use numeric tokens. The tokens
