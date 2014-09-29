@@ -1,8 +1,6 @@
-Paper OTP
-=========
+# Paper OTP
 
-Paper OTP Code Generator
-------------------------
+## Paper OTP Code Generator
 
 Manage a single-page PDF containing single-use numeric tokens. The tokens
 are generated using the RFC6238 algorithm with the X/Y coordinate as
@@ -20,10 +18,9 @@ See the example files, both generated with 'aaaaaaaaaaaaaaaa' as the secret.
 ![Example as PNG](example.png "Example OTP Sheet")
 
 
-More about Coinkite
--------------------
+## More about Coinkite
 
-Coinkite is the world's easiest and most powerful web wallet for
-safely holding all your cryptocurrencies, including Bitcoin and Litecoin.
 
-[Learn more about all we offer](https://coinkite.com/)
+Coinkite is an [international bitcoin wallet](https://coinkite.com/faq/about) focused on [hardcore privacy](https://coinkite.com/privacy), [bank-grade security](https://coinkite.com/faq/security), developer's [API](https://coinkite.com/faq/developers), [fast](https://coinkite.com/faq/security) transaction signing and [advanced features](https://coinkite.com/faq/features).
+
+[Get Your Account Today!](https://coinkite.com/)
