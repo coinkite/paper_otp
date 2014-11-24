@@ -20,7 +20,13 @@ See the example files, both generated with 'aaaaaaaaaaaaaaaa' as the secret.
 
 ## More about Coinkite
 
+_Join The Most Powerful Bitcoin Platform_
 
-Coinkite is an [international bitcoin wallet](https://coinkite.com/faq/about) focused on [hardcore privacy](https://coinkite.com/privacy), [bank-grade security](https://coinkite.com/faq/security), developer's [API](https://coinkite.com/faq/developers), [fast](https://coinkite.com/faq/security) transaction signing and [advanced features](https://coinkite.com/faq/features).
+Coinkite is the leading [bitcoin wallet](/faq/features) with
+[multi-signature](/faq/multisig),
+[bank-grade security](/faq/security),
+[developer's API](/faq/developers) and [hardcore privacy](/privacy).
+
+[Get Your Account Today!](https://coinkite.com/)
 
 [Get Your Account Today!](https://coinkite.com/)
