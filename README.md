@@ -22,11 +22,9 @@ See the example files, both generated with 'aaaaaaaaaaaaaaaa' as the secret.
 
 _Join The Most Powerful Bitcoin Platform_
 
-Coinkite is the leading [bitcoin wallet](/faq/features) with
-[multi-signature](/faq/multisig),
-[bank-grade security](/faq/security),
-[developer's API](/faq/developers) and [hardcore privacy](/privacy).
-
-[Get Your Account Today!](https://coinkite.com/)
+Coinkite is the leading [bitcoin wallet](https://coinkite.com/faq/features) with
+[multi-signature](https://coinkite.com/faq/multisig),
+[bank-grade security](https://coinkite.com/faq/security),
+[developer's API](https://coinkite.com/faq/developers) and [hardcore privacy](https://coinkite.com/privacy).
 
 [Get Your Account Today!](https://coinkite.com/)
